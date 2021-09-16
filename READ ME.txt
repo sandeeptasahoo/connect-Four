@@ -1,0 +1,1 @@
+Its a Future prediction based AI Algorithm which predicts 3 steps ahead of future and takes current step such that it  can ensure its win.
