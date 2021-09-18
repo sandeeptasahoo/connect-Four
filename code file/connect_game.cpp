@@ -4,7 +4,15 @@
 #include<stdlib.h>
 #include<time.h>
 using namespace std;
-int row=7,col=6;
+/*
+winning input for level 3
+3 4 5 5 1 6 3 2 2 4 2
+
+submitted by subham sai behera
+*/
+
+
+int row=7,col=6,AILevel=4;
 vector<vector<int>> game(row,vector<int>(col,0));
 
 int randomRange(int low,int high)
@@ -234,7 +242,7 @@ int AI_decision(int player)
     {
         enemy=1;
     }
-    int row,i,x,times=pow(col,2);
+    int row,i,x,times=pow(col,AILevel);
     int possible_ways,final_col=ChooseRandomPosition(),max_possible_ways=-1*times*col;
     for( i=0;i<col;i++)
     {
@@ -250,7 +258,7 @@ int AI_decision(int player)
             else
             {
                possible_ways=decide_future(player,times);
-                //cout<<possible_ways<<" ";
+                cout<<possible_ways<<" ";
                 if(max_possible_ways<possible_ways)
                 {
                     max_possible_ways=possible_ways;
@@ -262,7 +270,7 @@ int AI_decision(int player)
         }
 
     }
-    //cout<<endl;
+    cout<<endl;
     return final_col+1;
 
 
